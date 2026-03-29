@@ -1,0 +1,154 @@
+.timeline-container {
+  padding: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 0;
+  min-height: 100px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.past {
+  opacity: 1;
+}
+
+.timeline-item.current {
+  opacity: 1;
+}
+
+.timeline-item.future {
+  opacity: 0.5;
+}
+
+.timeline-times {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.time-arrival {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.time-departure {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.timeline-line {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  padding-top: 4px;
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border-radius: 50%;
+}
+
+.text-success { color: var(--success); }
+.text-accent { color: var(--accent-light); }
+.icon-future { color: var(--text-tertiary); }
+
+.current-pulse-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.pulse-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.timeline-connector {
+  position: absolute;
+  top: 30px;
+  bottom: -30px;
+  width: 2px;
+  background: var(--glass-border);
+  z-index: 1;
+}
+
+.timeline-item.past .timeline-connector {
+  background: var(--success);
+}
+
+.timeline-item.current .timeline-connector {
+  background: linear-gradient(180deg, var(--accent-primary), var(--glass-border));
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 24px;
+  padding-bottom: 40px;
+}
+
+.station-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.station-header h3 {
+  font-size: 1.25rem;
+  color: white;
+  margin: 0;
+}
+
+.station-code {
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  font-weight: 700;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.station-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dot-sep {
+  color: var(--text-tertiary);
+  font-size: 0.6rem;
+}
