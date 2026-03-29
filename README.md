@@ -49,8 +49,7 @@ Make sure you have Node.js installed (v18+ recommended):
 
 1. **Clone the repository** (or download the project):
    ```bash
-   git clone <repository-url>
-   cd irctc-scheduler
+   git clone https://github.com/abhay-bharat/irctc-tracker-and-scheduler.git
    ```
 
 2. **Install the dependencies**:
